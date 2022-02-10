@@ -8,49 +8,49 @@ export default class MyComponent extends React.Component{
         view:false,
         questions:[
             {
-                question:"Who is the fastest animal?",
+                question:"Name of this  animal?",
                 image:"https://i.ibb.co/GMxd0Ss/Taken-in-the-Okavango-Delta.jpg",
                 answer:" Cheetah",
                 options:[" Cheetah","Dear","Bear"]
             },
             {
-                question:"Which animal is known as the man’s best friend?",
+                question:"Name of this animal ?",
                 image:"https://i.ibb.co/dcm74Hw/dog-1.jpg" ,
                 answer:"Dog",
                 options:["Dog","Cat","Horse"]
             },
             {
-                question:"Which  one is the tallest bird in the world? ",
+                question:"Who is the tallest bird in the world? ",
                 image:"https://i.ibb.co/N9Pqm5y/ostrich.jpg" ,
                 answer:"Ostrich",
                 options:["Parrot","Ostrich","Sparrow"]
             },
             {
-                question:"What color is the blood of an octopus?",
+                question:" Color is the blood of an octopus?",
                 image:"https://i.ibb.co/Hg3Q5SJ/Octupus.jpg" ,
                 answer:"Blue",
                 options:["Blue","Red","White"]
             },
             {
-                question:"Which underwater animal can sing?",
+                question:"Name underwater animal can sing?",
                 image:"https://i.ibb.co/kBkwkwP/whale.jpg" ,
                 answer:"Whale",
                 options:["Whale","Shark","Frog"]
             },
             {
-                question:"Which animal breathes through its skin? ",
+                question:"Which animal breathes through skin? ",
                 image:"https://i.ibb.co/z4SyLt9/frog.jpg",
                 answer:"Frog",
                 options:["Fish","Octopus","Frog"]
             },
             {
-                question:"Which is the tallest animal?",
+                question:"What is the name of this animal ? ",
                 image:"https://i.ibb.co/M7LJCf9/Giraffe.jpg " ,
                 answer:"Giraffe",
                 options:["Elephant","Cow","Giraffe"]
             },
             {
-                question:"What animal eats mainly bamboo?",
+                question:"Which animal eats mainly bamboo?",
                 image:"https://i.ibb.co/MZmdTd6/bamboo.jpg" ,
                 answer:"Panda",
                 options:["Panda","Goat","Elephant"]
@@ -69,9 +69,9 @@ export default class MyComponent extends React.Component{
             },
             {
                 question:"What is the name of this  animal?",
-                image:"https://i.ibb.co/M7LJCf9/Giraffe.jpg" ,
-                answer:"Giraffe",
-                options:["Elephant","Ostrich","Giraffe"]
+                image:"https://i.ibb.co/KXKYT94/bear.jpg" ,
+                answer:"Bear",
+                options:["Elephant","Ostrich","Bear"]
             },
             {
                 question:"What is the Name of this  animal?",
@@ -92,16 +92,16 @@ export default class MyComponent extends React.Component{
                 options:["Horse","Donkey","Monkey"]
             },
             {
-                question:"Name  of big cat that cannot roar? ",
-                image:"https://i.ibb.co/GMxd0Ss/Taken-in-the-Okavango-Delta.jpg" ,
-                answer:"Cheeta",
-                options:["Cat","lion","Cheeta"]
+                question:"what is the name of this animal ? ",
+                image:"https://i.ibb.co/z8kTFhG/cow.jpg" ,
+                answer:"Cow",
+                options:["Cow","Goat","Buffalow"]
             },
             {
-                question:"Name of this animal ? ",
-                image:"https://i.ibb.co/GMxd0Ss/Taken-in-the-Okavango-Delta.jpg" ,
-                answer:"Cheeta",
-                options:["Lion","beer","Cheeta"]
+                question:"Name of the name of bird  ? ",
+                image:"https://i.ibb.co/syf7WNK/peacock.jpg" ,
+                answer:"Peacock",
+                options:["Peacock","Parrot","Crow"]
             },
             {
                 question:"Name of this Animal? ",
@@ -117,15 +117,15 @@ export default class MyComponent extends React.Component{
             },
             {
                 question:" Name of this animal ?",
-                image:"https://i.ibb.co/bH5WRJJ/Monkey.jpg",
-                answer:"Monkey",
-                options:["Monkey","Bird","Dog"]
+                image:"https://i.ibb.co/k48WV4n/dear.jpg",
+                answer:"Deer",
+                options:["Monkey","Deer","Cow"]
             },
             {
-                question:"Name of this animal ? ",
-                image:"https://i.ibb.co/dcm74Hw/dog-1.jpg" ,
-                answer:"Dog",
-                options:["Dog","Cat","Bird"]
+                question:"What is the name of black bird  ? ",
+                image:"https://i.ibb.co/sH3RNGJ/crow.jpg" ,
+                answer:"Crow",
+                options:["Sparrow","Crow","pegion"]
             },
             
         ],
@@ -144,7 +144,7 @@ export default class MyComponent extends React.Component{
         let randomInteger;
          while (!randomInteger) {
             let temp = Math.floor(Math.random() * questions.length);
-            if (!newArray.filter((v) => questions[temp] == v).length) {
+            if (!newArray.filter((v) => questions[temp] === v).length) {
                 randomInteger = temp;
             }
           }
@@ -156,21 +156,26 @@ export default class MyComponent extends React.Component{
         const {name,view,getArray}= this.state;
         // console.log(this.state.view);
         return <React.Fragment>
-     <div className="main">
-                {view===false?
-            <div className="container m-auto">
-     <div className="entryBox m-auto">
-    <h3 className="welcome">Quiz Question App</h3>
-     <div className="form-group p-2">
-     <input type="text" className="form-control w-50 m-auto" name="name"  onChange={this.handleInput} placeholder="Enter your name"/>
+        
+              {view===false?
+        <div className="container ">
+        <div className="entryBox ">
+                  <h3 className="welcome">Quiz Question App</h3>
+        <div className="form-group p-4">
+            
+        <input type="text" 
+               className="form-control" 
+               name="name"  
+               onChange={this.handleInput} 
+               placeholder="Enter your name"/>
         </div>
-     <div className="submitButton">
-    <button className="btn btn-success btn-sm" onClick={()=>this.view()}>Play Game</button>
-         </div>
-             </div>
-            </div>:
-    <MyQuestion name={name} getArray={getArray} />}
-            </div>
+        <div    className="submitButton">
+        <button className="btn btn-success btn-sm" 
+                onClick={()=>this.view()}>Play Game</button>
+        </div>
+        </div>
+        </div> : <MyQuestion name={name} getArray={getArray} />}
+        
         </React.Fragment>
     }
 }

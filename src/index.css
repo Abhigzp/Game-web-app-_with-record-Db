@@ -1,4 +1,5 @@
 body {
+  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,7 +13,9 @@ code {
     monospace;
 }
 
-.main{
+.container{
+  display: flex;
+  justify-content: center;
   margin-top: 15%;
 }
 .entryBox {
@@ -20,33 +23,51 @@ code {
   border: 1px;
   display: flex;
   justify-content: center;
-  width: 40%;
+  align-items: center;
+  width: 50%;
   flex-direction: column;
+  padding: 20px;
 }
 .welcome{
   margin: auto;
   font-style: italic;
 }
-.questionImage{
-  width: 200px;
-}
+
 .submitButton{
   margin: auto;
-}
-.text-center{
-  margin-bottom: 1rem;
-  border-style: outset;
-  width:fit-content;
-  margin: auto;
-  text-align: center;
-  background-color:lightgray;
-
-}
-.result{
-  width: 250px;
 }
 .play{
   color: blue;
   text-decoration: underline;
   cursor: pointer;
+}
+.text{
+  border-style: outset;
+  width:33%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-42%);
+  text-align: center;
+  background-color:rgb(196, 191, 191);
+  padding: 20px;
+}
+.images{
+  width: 230px;
+  height: 200px;
+  padding: 5px;
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .entryBox{
+    width:90%;
+  }
+  .text{
+    width: 90%;
+  }
+  /* .container{
+    margin-top: 20%;
+  } */
 }

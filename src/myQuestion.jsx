@@ -38,24 +38,21 @@ export default class MyQuestion extends React.Component{
     let {question,options,image} = getArray[i];
    
     return   <React.Fragment>
+   <div className="text">
+       {indexs<5?<div className="questions">
+          <div className="question1">
+               <h4 className="questn">{question}</h4>
 
-      <div className="text-center">
-
-      <span className="text-danger">{template}</span>
-      {indexs<5?<div className="questions">
-       
-        <div className="question1"> 
-        <h4 className="questn">{question}</h4>
-        </div>
-        <img className="img-fluid img-thumbnail" src={image}/>
+                
+                <img className="images" src={image}/>            
+          
         <div className="buttons">
-          {options.map((value,index)=><button className="btn btn-info btn sm m-1" key={index} onClick={()=>this.checkAnswer(value,indexs)}>{value}</button>)}
+          {options.map((value,index)=><button className="btn btn-info btn sm m-1 " key={index} onClick={()=>this.checkAnswer(value,indexs)}>{value}</button>)}
         </div> 
-      </div>:<div className="">
-          <ShowResult name={name} counter={counter} />
-        </div>}
-        
-        
+        </div>
+        <span className="text-danger">{template}</span>
+         </div>    :   <div className=""><ShowResult name={name} counter={counter} />  </div>}
+      
         </div>
     </React.Fragment>
   }
